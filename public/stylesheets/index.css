@@ -1,0 +1,67 @@
+body{
+    height: 100vh;
+    overflow: hidden;
+}
+
+.Indexheader{
+    /* border: 2px solid black; */
+    height: 90vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.lessonList{
+    /* background-color: burlywood; */
+    overflow: auto;
+    max-height: 50%;
+}
+
+.lessonList a{
+    padding: 12px 16px;
+    background-color: #ddd;
+    margin: 0 0 10px 0;
+    text-decoration: none;
+    display: block;  
+    color: black;
+    font-size: larger;
+    border-radius: 10px;
+}
+
+.lessonContent{
+    max-height: 95vh;
+    border-left: 1px solid black;
+}
+
+.lesson{
+    max-height: 90%;
+    overflow: auto;
+}
+
+#process-line{
+    height: 2px;
+    background-color: brown;
+    max-width: 100%;
+}
+
+
+
+::-webkit-scrollbar-track
+{
+	border: 1px solid black;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+	width: 4px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background-color: #000000;	
+}
+
