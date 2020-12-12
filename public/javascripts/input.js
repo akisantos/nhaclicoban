@@ -32,8 +32,7 @@ $('#submit').click(()=>{
         console.log('Article data: ', outputData)
         let holder = JSON.stringify(outputData);
 
-        console.warn(typeof(holder));
-        $.post('http://localhost:3000/input/upload',{"data":holder}, function(result){
+        $.post('https://aki-nhacly.herokuapp.com/input/upload',{"data":holder}, function(result){
             $("#noti").html(result);
           });
 
