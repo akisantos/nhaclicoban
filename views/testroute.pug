@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  script(src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest")
+  script(src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest")
+  script(src="https://cdn.jsdelivr.net/npm/@editorjs/list@latest")
+  script(src="https://cdn.jsdelivr.net/npm/editorjs-html@3.0.3/build/edjsHTML.js")
+  script(src="https://cdn.jsdelivr.net/npm/@editorjs/image@2.3.0")
+  script(src="https://cdn.jsdelivr.net/npm/@editorjs/embed@latest")
+  script(src="https://cdn.jsdelivr.net/npm/@editorjs/simple-image@latest")
+  
+  
+  h1= title
+  p(id='noti') Akki here
+
+  div(id='editorjs')
+  button(id='submit') Submit
+  button(id='load') Load
+  div(id='res')
+  script(src="/javascripts/input.js")
+
