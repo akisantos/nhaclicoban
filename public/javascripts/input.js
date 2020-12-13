@@ -27,12 +27,13 @@ const editor = new EditorJS({
 });
 
 $('#submit').click(()=>{
-
+    console.log(window.location)
+    let LocationLink = window.location.href;
     editor.save().then((outputData) => {
         console.log('Article data: ', outputData)
         let holder = JSON.stringify(outputData);
 
-        $.post('https://aki-nhacly.herokuapp.com/input/upload',{"data":holder}, function(result){
+        $.post(LocationLink+'/upload',{"data":holder}, function(result){
             $("#noti").html(result);
           });
 
@@ -44,7 +45,7 @@ $('#submit').click(()=>{
 
 $('#load').click(()=>{
     const edjsParser = edjsHTML();
-    $.getJSON("/javascripts/data.json", function(result){
+    $.getJSON("/javascripts/data/data.json", function(result){
         let html = edjsParser.parse(result);
         $("#res").html(html);
 

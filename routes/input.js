@@ -4,7 +4,7 @@ var fs = require('fs');
 
 
 router.get('/', function(req, res, next) {
-    res.render('testroute', { title: 'Nhạc Lý Cơ Bản' });
+    res.render('testroute', { title: 'Nhạc Lý Cơ Bản Input' });
 });
 
 router.post('/upload', function(req, res) {
@@ -13,7 +13,7 @@ router.post('/upload', function(req, res) {
     console.log(data, typeof(data))
     let convertedData = JSON.parse(data);
     console.log(convertedData)
-    fs.writeFileSync('./public/javascripts/data.json', data);
+    fs.writeFileSync('./public/javascripts/data/data.json', data);
     res.send('Ok')
 });
 
