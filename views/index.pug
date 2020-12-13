@@ -3,36 +3,53 @@ extends layout
 block content
   link(rel="stylesheet", href="/stylesheets/index.css")
   script(src="/javascripts/jsonParser.js")
-  div(class='container-fluid')
-    div(class='row')
-      div(class='col-md-3 Indexheader')
 
-        div(class="title text-center")
-          h2 Aki nhạc lý
-          p Nhạc lý căn bản
-          p(id='lessonID')= lessonID
+  .wrapper
+    // Sidebar
+    nav#sidebar
+      .sidebar-header.text-center
+        img(src="https://i.imgur.com/AB3dh4G.png", alt="ICO")
+        br
+        h3 Aki Nhạc lý
+        p Nhạc lý cơ bản
+        p(id='lessonID')= lessonID
+      ul.list-unstyled.components
+        li.active
+          a.dropdown-toggle(href='#homeSubmenu' data-toggle='collapse' aria-expanded='false') Danh sách bài học
+          ul#homeSubmenu.collapse.list-unstyled
+            li
+              a(href='/lesson/0') Giới thiệu
+            li
+              a(href='/lesson/1') Bài 1
+            li
+              a(href='/lesson/2') Bài 2
+        li
+          a(href='/lesson/aboutmelol') About
+    // Holder
+    div(class="lessonContent" id="content")
+      nav.navbar.navbar-expand-lg.navbar-light.bg-light
+        .container-fluid
+          button#sidebarCollapse.navbar-btn(type='button')
+            span
+            span
+            span
+          a(id="lesson-name") Tool học nhạc nho nhỏ của Akkii
+          button.btn.btn-dark.d-inline-block.d-lg-none.ml-auto(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+            i.fas.fa-align-justify
 
-        div
-          h4 Danh sách bài học
-          div(class="lessonList")
+          #navbarSupportedContent.collapse.navbar-collapse
 
-            a(href="/lesson/0" class="lessonNav") Giới thiệu
-            h6 Căn bản
-            a(href="/lesson/1" class="lessonNav") Dòng kẻ nhạc, khóa, đường kẻ phụ
-            a(href="/lesson/2" class="lessonNav") Quãng của nốt
-            a(href="/lesson/3" class="lessonNav") Đo lường và kí hiệu thời gian
-            a(href="#" class="lessonNav") Quãng nghỉ
-            a(href="#" class="lessonNav") Chấm và luyến
-            a(href="#" class="lessonNav") Các bước và quãng
+            ul.nav.navbar-nav.ml-auto
+              li.nav-item.active
+                a.nav-link(href='#' id="back-button") Bài trước
 
-      div(class='col-md-9 lessonContent')
-        div(id="topic-title")
-          h4(id="lesson-name") &nbsp; 
-        div(id='process-line')
-        div(class='lesson')
-          h2(id='lesson-name-header')
-          div(id='lessonContent')
-          
+              li.nav-item.active
+                a.nav-link(href='#' id="next-button") Bài tiếp
+      .lesson
+        h2(id='lesson-name-header')
+        #lessonContent
+
+
 
 
 
