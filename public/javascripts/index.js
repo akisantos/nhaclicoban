@@ -19,13 +19,15 @@ $(".lesson").on('scroll', ()=> {
 
 // JSONPARSER
 const edjsParser = edjsHTML();
-$(document).ready(()=>{
+$(document).ready(()=>{ 
+    
     let holder = $("#lessonID").html().split('"');
 
-    $.getJSON('/javascripts/data/bai'+holder[1]+'.json',(res,status)=>{
+    $.getJSON('/javascripts/data/bai'+holder[1]+'.json',(res)=>{
 
         let html = edjsParser.parse(res);
         $("#lesson-name-header").html(res.blocks[0].data.text);
+        document.title = res.blocks[0].data.text;
 
         $('#lessonContent').html(html);
     }).fail(function() {
