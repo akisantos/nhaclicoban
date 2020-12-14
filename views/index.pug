@@ -5,7 +5,7 @@ block content
   script(src="/javascripts/jsonParser.js")
   
   .wrapper
-    a#toTopBtn.cd-top.text-replace.js-cd-top.cd-top--is-visible.cd-top--fade-out.pointer
+    
     // Sidebar
     nav#sidebar
       .sidebar-header.text-center
@@ -32,9 +32,10 @@ block content
               a(href='/lesson/5') Bài 5
 
         li
-          a(href='/lesson/aboutmelol') About
+          a.text-muted(href='/lesson/aboutmelol') About
     // Holder
     div(class="lessonContent" id="content")
+      a#toTopBtn.cd-top.text-replace.js-cd-top.cd-top--is-visible.cd-top--fade-out.pointer
       nav.navbar.navbar-expand-lg.navbar-light.bg-light
         .container-fluid
           button#sidebarCollapse.navbar-btn(type='button')

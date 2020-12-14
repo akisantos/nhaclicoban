@@ -25,17 +25,21 @@ img{
     height: 80%;
     max-height: 80%;
     overflow: auto;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+    background-color: #fff;
 }
 
 #lessonContent{
+    padding-top: 2%;
     padding-left: 2%;
+
 }
 
 .pointer{
     cursor: pointer;
 }
 /*
-    !!NOT MY CODE! 
+    Layout CSS
 */
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
@@ -95,14 +99,15 @@ a, a:hover, a:focus {
     height: 100vh;
     align-items: stretch;
     perspective: 1500px;
+    background-color: rgb(55, 125, 255); ;
 }
 
 
 #sidebar {
     min-width: 250px;
     max-width: 250px;
-    background: #5e227f;
-    color: #fff;
+    background: rgb(241,243,245);
+    color:rgb(83,83,83);
     transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
     transform-origin: bottom left;
 }
@@ -115,12 +120,12 @@ a, a:hover, a:focus {
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background:#5e227f;
+    background-color: rgb(241,243,245);
 }
 
 #sidebar ul.components {
     padding: 20px 0;
-    border-bottom: 1px solid #47748b;
+    border-bottom: 1px solid #edeff0;
 }
 
 #sidebar ul p {
@@ -132,15 +137,17 @@ a, a:hover, a:focus {
     padding: 10px;
     font-size: 1.1em;
     display: block;
+    color: rgb(237, 239, 247);
+
 }
 #sidebar ul li a:hover {
-    color: #d22780;
+    color:rgb(55, 125, 255); 
     background: #fff;
 }
 
 #sidebar ul li.active > a, a[aria-expanded="true"] {
     color: #fff;
-    background:#5e227f;
+    background:rgb(55, 125, 255);
 }
 
 
@@ -159,7 +166,7 @@ a[data-toggle="collapse"] {
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #f8b500;
+    background-color: rgb(55,125,255);
 }
 
 ul.CTAs {
@@ -277,7 +284,7 @@ a.article, a.article:hover {
     right: 39px;
     z-index: 98;
     padding: 21px;
-    background-color: hsla(5, 76%, 62%, .8)
+    background-color: rgb(55,125,255);
 }
 
 .js .cd-top--fade-out {
@@ -308,6 +315,6 @@ a.article, a.article:hover {
     width: var(--cd-back-to-top-size);
     box-shadow: 0 0 10px rgba(0, 0, 0, .05) !important;
     background: url(https://res.cloudinary.com/dxfq3iotg/image/upload/v1571057658/cd-top-arrow.svg) no-repeat center 50%;
-    background-color: hsla(5, 76%, 62%, .8);
-    background-color: hsla(var(--cd-color-3-h), var(--cd-color-3-s), var(--cd-color-3-l), 0.8)
+    background-color: rgb(55,125,255);
+    /* background-color: hsla(var(--cd-color-3-h), var(--cd-color-3-s), var(--cd-color-3-l), 0.8) */
 }
