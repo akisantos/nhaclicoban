@@ -53,7 +53,8 @@ $(document).ready(()=>{
 
     // Xử lí nút back and next
     let numberID = parseInt(holder[1]);
-    if (numberID>1 && numberID+1<=2){
+    console.log(numberID)
+    if (numberID>0 && numberID+1<=2){
         let back= numberID-1;
         let next= numberID+1;
         $("#back-button").attr("href","/lesson/"+back);
