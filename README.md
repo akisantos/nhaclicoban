@@ -9,3 +9,4 @@ Về tool:
   + Đây là một tool hoàn toàn miễn phí
   + Các nội dung bài học được sưu tầm từ nhiều nguồn đã được duyệt từ giới chuyên môn
   + Sử dụng NodeJS và Express làm backend, Pug và GSAP, Bootstrap làm frontend
+  + EditorJS làm trang viết nội dung
