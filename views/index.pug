@@ -3,8 +3,9 @@ extends layout
 block content
   link(rel="stylesheet", href="/stylesheets/index.css")
   script(src="/javascripts/jsonParser.js")
-
+  
   .wrapper
+    a#toTopBtn.cd-top.text-replace.js-cd-top.cd-top--is-visible.cd-top--fade-out.pointer
     // Sidebar
     nav#sidebar
       .sidebar-header.text-center
@@ -46,15 +47,28 @@ block content
 
           #navbarSupportedContent.collapse.navbar-collapse
 
-            ul.nav.navbar-nav.ml-auto
-              li.nav-item.active
-                a.nav-link(href='#' id="back-button") Bài trước
+            //- ul.nav.navbar-nav.ml-auto
+            //-   li.nav-item.active
+            //-     a.nav-link(href='#' id="back-button") Bài trước
 
-              li.nav-item.active
-                a.nav-link(href='#' id="next-button") Bài tiếp
+            //-   li.nav-item.active
+            //-     a.nav-link(href='#' id="next-button") Bài tiếp
+
+            ul.pagination.nav.navbar-nav.ml-auto
+              li.page-item
+                a.page-link(href='#' aria-label='Next' id="back-button")
+                  span(aria-hidden='true') «
+                  span.sr-only Trước
+
+              li.page-item
+                a.page-link(href='#' aria-label='Next' id="next-button")
+                  span(aria-hidden='true') »
+                  span.sr-only Sau
+
       .lesson
         h2(id='lesson-name-header')
         #lessonContent
+
 
 
 

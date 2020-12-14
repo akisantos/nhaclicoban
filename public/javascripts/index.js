@@ -2,6 +2,7 @@ console.log('loaded')
 // $('#process-line').width(0);
 $("#lesson-name-header").hide();
 $("#lessonID").hide();
+$('#toTopBtn').fadeOut();
 
 // Animation
 $("#lesson-name").change(()=>{
@@ -26,6 +27,7 @@ $(".lesson").on('scroll', ()=> {
 
 // JSONPARSER
 const edjsParser = edjsHTML();
+
 $(document).ready(()=>{ 
     
     //Khi load trang hoàn tất, kích sidebar
@@ -38,7 +40,6 @@ $(document).ready(()=>{
     //Lấy id bài rồi in ra
     let holder = $("#lessonID").html().split('"');
 
-
     $.getJSON('/javascripts/data/bai'+holder[1]+'.json',(res)=>{
 
         let html = edjsParser.parse(res);
@@ -50,19 +51,66 @@ $(document).ready(()=>{
         $("#lesson-name-header").html("LỖI KHÔNG TẢI ĐƯỢC BÀI, vui lòng quay lại sau");
         $("#lesson-name-header").show();
     })
-
-    // Xử lí nút back and next
-    let numberID = parseInt(holder[1]);
-    console.log(numberID)
-    if (numberID>0 && numberID+1<=2){
-        let back= numberID-1;
-        let next= numberID+1;
-        $("#back-button").attr("href","/lesson/"+back);
-        $("#next-button").attr("href","/lesson/"+next);
-    }else{
-        $("#back-button").attr("href","/lesson/"+0);
-        $("#next-button").attr("href","/lesson/"+1);  
-    }
-
     
 })
+
+
+
+
+// AJAX
+function loadJSONthenParse(number){
+    
+    $.getJSON('/javascripts/data/bai'+number+'.json',(res)=>{
+        let html = edjsParser.parse(res);
+        $("#lesson-name-header").html(res.blocks[0].data.text);
+        document.title = res.blocks[0].data.text;
+        $("#lessonID").html('"'+number+'"');
+        $('#lessonContent').html(html);
+    }).fail(function() {
+        $("#lesson-name-header").html("LỖI KHÔNG TẢI ĐƯỢC BÀI, vui lòng quay lại sau");
+        $("#lesson-name-header").show();
+        setTimeout(()=>{
+            $("#lesson-name-header").hide();
+        },5000)
+})
+}
+
+// Xử lí nút back and next
+
+$("#back-button").click(()=>{
+    let holder = $("#lessonID").html().split('"');
+    let numberID = parseInt(holder[1]);
+    if (numberID>0){
+        loadJSONthenParse(numberID-1);
+    }
+
+
+
+})
+$("#next-button").click(()=>{
+    let holder = $("#lessonID").html().split('"');
+    let numberID = parseInt(holder[1]);
+    if (numberID<3){
+        loadJSONthenParse(numberID+1);
+    }
+
+})
+
+// ScrollToTop
+
+$(".lesson").ready(function() {
+    $(".lesson").scroll(function() {
+        if ($(this).scrollTop() > 20) {
+        $('#toTopBtn').fadeIn();
+    } else {
+        $('#toTopBtn').fadeOut();
+    }
+});
+    
+$('#toTopBtn').click(function() {
+    $(".lesson").animate({
+        scrollTop: 0
+    }, 1000);
+        return false;
+    });
+});
