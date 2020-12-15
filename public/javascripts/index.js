@@ -59,19 +59,25 @@ $(document).ready(()=>{
 
 // AJAX
 function loadJSONthenParse(number){
-    
+    $(".lesson").animate({
+        scrollTop: 0
+    }, 1000);
     $.getJSON('/javascripts/data/bai'+number+'.json',(res)=>{
         let html = edjsParser.parse(res);
         $("#lesson-name-header").html(res.blocks[0].data.text);
         document.title = res.blocks[0].data.text;
         $("#lessonID").html('"'+number+'"');
         $('#lessonContent').html(html);
+
+
     }).fail(function() {
         $("#lesson-name-header").html("LỖI KHÔNG TẢI ĐƯỢC BÀI, vui lòng quay lại sau");
         $("#lesson-name-header").show();
         setTimeout(()=>{
             $("#lesson-name-header").hide();
         },5000)
+
+    
 })
 }
 

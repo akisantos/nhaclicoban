@@ -22,8 +22,8 @@ img{
 }
 
 .lesson{
-    height: 80%;
-    max-height: 80%;
+    height: 86%;
+    max-height: 90%;
     overflow: auto;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
     background-color: #fff;
@@ -32,6 +32,8 @@ img{
 #lessonContent{
     padding-top: 2%;
     padding-left: 2%;
+    padding-bottom: 4%;
+    padding: 2% 2% 4% 2%;
 
 }
 
@@ -50,6 +52,8 @@ body {
     font-family: 'Roboto', sans-serif;
     background: #fafafa;
     height: 100vh;
+
+    
     /* overflow: hidden; */
 }
 
@@ -99,7 +103,18 @@ a, a:hover, a:focus {
     height: 100vh;
     align-items: stretch;
     perspective: 1500px;
-    background-color: rgb(55, 125, 255); ;
+    background-color: rgb(55, 125, 255); 
+
+    /* Background */
+    --stripe: #cfd8dc;
+    --bg: #e1e1e1;
+  
+    background: linear-gradient(135deg, var(--bg) 25%, transparent 25%) -50px 0,
+      linear-gradient(225deg, var(--bg) 25%, transparent 25%) -50px 0,
+      linear-gradient(315deg, var(--bg) 25%, transparent 25%),
+      linear-gradient(45deg, var(--bg) 25%, transparent 25%);
+    background-size: 100px 100px;
+    background-color: var(--stripe);
 }
 
 
