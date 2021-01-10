@@ -37,6 +37,22 @@ img{
 .pointer{
     cursor: pointer;
 }
+  
+.searchResult{
+    padding: 20px 20px 0px 20px;
+}
+
+/* Player */
+.noti{
+    padding: 20px 20px 0px 20px;
+
+}
+
+.pageContent{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
 /*
     Layout CSS
 */
@@ -51,7 +67,7 @@ body {
     height: 100vh;
 
     
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 p {

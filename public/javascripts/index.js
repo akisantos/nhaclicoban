@@ -96,7 +96,7 @@ $("#back-button").click(()=>{
 $("#next-button").click(()=>{
     let holder = $("#lessonID").html().split('"');
     let numberID = parseInt(holder[1]);
-    if (numberID<3){
+    if (numberID<4){
         loadJSONthenParse(numberID+1);
     }
 

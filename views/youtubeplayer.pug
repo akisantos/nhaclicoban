@@ -1,10 +1,12 @@
-extends layout 
-
+extends layout
 block content
-  link(rel="stylesheet", href="/stylesheets/index.css")
+
   link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
-  script(src="/javascripts/jsonParser.js")
-  
+  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css')
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js')
+  link(rel="stylesheet", href="/stylesheets/funny.css")
+ 
   .wrapper
     
     // Sidebar
@@ -36,36 +38,33 @@ block content
           a.text-muted(href='/lesson/aboutmelol') About
     // Holder
     div(class="lessonContent" id="content")
-      a#toTopBtn.cd-top.text-replace.js-cd-top.cd-top--is-visible.cd-top--fade-out.pointer
+ 
       nav.navbar.navbar-expand-lg.navbar-light.bg-light
         .container-fluid
           button#sidebarCollapse.navbar-btn(type='button')
             span
             span
             span
-          a(id="lesson-name") Tool học nhạc chưa to của akkii
+
+          a#id=title
+            
           button.btn.btn-dark.d-inline-block.d-lg-none.ml-auto(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
             i.fas.fa-align-justify
 
-          #navbarSupportedContent.collapse.navbar-collapse
-            ul.pagination.nav.navbar-nav.ml-auto
-              li.page-item
-                a.page-link(href='#' aria-label='Next' id="back-button")
-                  span(aria-hidden='true') «
-                  span.sr-only Trước
 
-              li.page-item
-                a.page-link(href='#' aria-label='Next' id="next-button")
-                  span(aria-hidden='true') »
-                  span.sr-only Sau
+          #navbarSupportedContent.collapse.navbar-collapse
+
 
       .lesson
-        h2(id='lesson-name-header')
-        #lessonContent
+        .pageContent.text-center
+          #ytplayer
+          br
+          .alert.alert-success(role='alert')
+            strong Lưu ý!
+            |  Bạn đã có thể chia sẽ video thực hành của mình rồi nhé!
 
-
-
-
-
-
-  script(src="/javascripts/index.js")
+          #fb-root
+          script(async='' defer='' crossorigin='anonymous' src='https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v9.0&appId=365495230891132&autoLogAppEvents=1' nonce='XklYdq55')
+          .fb-comments(data-href='http://localhost:3000/howtoplay' data-width='' data-numposts='5')
+  script(src="/javascripts/player.js")
+    

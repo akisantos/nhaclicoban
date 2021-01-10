@@ -1,0 +1,87 @@
+extends layout 
+
+block content
+
+  link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
+  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css')
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js')
+  link(rel="stylesheet", href="/stylesheets/funny.css")
+  
+  .wrapper
+    
+    // Sidebar
+    nav#sidebar
+      .sidebar-header.text-center
+        img(src="https://i.imgur.com/AB3dh4G.png", alt="ICO")
+        br
+        h3 Ritsu
+        p Demo nhạc lý cơ bản
+        p(id='lessonID')= lessonID
+      ul.list-unstyled.components
+        li.active
+          a.dropdown-toggle(href='#homeSubmenu' data-toggle='collapse' aria-expanded='false') Danh sách bài học
+          ul#homeSubmenu.collapse.list-unstyled
+            li
+              a(href='/lesson/0') Giới thiệu
+            li
+              a(href='/lesson/1') Bài 1: Dòng kẻ nhạc, khóa, đường kẻ phụ
+            li
+              a(href='/lesson/2') Bài 2: Giá trị trường độ của các nốt 
+            li
+              a(href='/lesson/3') Bài 3: Ô nhịp và số chỉ nhịp
+            li
+              a(href='/lesson/4') Thêm...
+
+        li
+          a.text-muted(href='/funny') For fun
+        li
+          a.text-muted(href='/lesson/aboutmelol') About
+    // Holder
+    div(class="lessonContent" id="content")
+ 
+      nav.navbar.navbar-expand-lg.navbar-light.bg-light
+        .container-fluid
+          button#sidebarCollapse.navbar-btn(type='button')
+            span
+            span
+            span
+
+          
+          .form-inline.ml-auto
+            .md-form.my-0
+
+              input.form-control(type='text' placeholder='Tìm kiếm' aria-label='Tìm kiếm' max-length='30' id='seach-box' data-toggle="tooltip" data-placement="bottom" title="Chỉ cần nhập tên bài muốn học thôi")
+
+            button.btn.btn-outline-white.btn-md.my-0.ml-sm-2(id='search-submit') 
+              span.glyphicon.glyphicon-search
+            
+          button.btn.btn-dark.d-inline-block.d-lg-none.ml-auto(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+            i.fas.fa-align-justify
+
+          
+
+          #navbarSupportedContent.collapse.navbar-collapse
+            .btn-group.btn-group-toggle(data-toggle='buttons')
+              label.btn.btn-primary.active.instrumentRadio
+                input#popular(type='radio' name='instrument' autocomplete='off' checked='' value='popular')
+                |  Phổ biến
+              label.btn.btn-primary.instrumentRadio
+                input#piano(type='radio' name='instrument' autocomplete='off' value='piano')
+                |  Piano
+              label.btn.btn-primary.instrumentRadio
+                input#guitar(type='radio' name='instrument' autocomplete='off' value='guitar')
+                |  Guitar
+              label.btn.btn-primary.instrumentRadio
+                input#ukulele(type='radio' name='instrument' autocomplete='off' value='ukulele')
+                |  Ukulele
+  
+      .lesson
+        .noti
+          p#theloai
+          p#ress Ở đây bạn có thể tìm những video dạy chơi bài nào đó bằng 3 loại nhạc cụ bạn mong muốn
+        
+        .searchResult
+
+
+  script(src="/javascripts/funny.js")
