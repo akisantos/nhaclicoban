@@ -5,7 +5,7 @@ block content
   link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css')
   script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
   script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js')
-  link(rel="stylesheet", href="/stylesheets/funny.css")
+  link(rel="stylesheet", href="/stylesheets/player.css")
  
   .wrapper
     
@@ -16,7 +16,7 @@ block content
         br
         h3 Ritsu
         p Demo nhạc lý cơ bản
-        p(id='lessonID')= lessonID
+
       ul.list-unstyled.components
         li.active
           a.dropdown-toggle(href='#homeSubmenu' data-toggle='collapse' aria-expanded='false') Danh sách bài học
@@ -33,38 +33,43 @@ block content
               a(href='/lesson/4') Thêm...
 
         li
-          a.text-muted(href='/funny') Tập đàn
+          a.text-muted(href='/funny') Ritsu Zone
         li
           a.text-muted(href='/lesson/aboutmelol') About
     // Holder
     div(class="lessonContent" id="content")
- 
-      nav.navbar.navbar-expand-lg.navbar-light.bg-light
-        .container-fluid
-          button#sidebarCollapse.navbar-btn(type='button')
-            span
-            span
-            span
 
-          a#id=title
+      nav.navbar.navbar-expand-lg.navbar-light.bg-light
+        a#toTopBtn.cd-top.text-replace.js-cd-top.cd-top--is-visible.cd-top--fade-out.pointer
+        .container-fluid
+          //- button#sidebarCollapse.navbar-btn(type='button')
+          //-   span
+          //-   span
+          //-   span
             
+
+          h5.badge.badge-primary  Ritsu!! Tự học và chia sẻ cách tự học của mình với mọi người nhé!
+
           button.btn.btn-dark.d-inline-block.d-lg-none.ml-auto(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
             i.fas.fa-align-justify
 
+          
 
           #navbarSupportedContent.collapse.navbar-collapse
-
+            a(href="/funny") Trở lại tìm kiếm
 
       .lesson
-        .pageContent.text-center
+        .col-sm-2
+        .videoHolder.col-md-8.text-center
+          a#id=title
           #ytplayer
           br
           .alert.alert-success(role='alert')
-            strong Lưu ý!
-            |  Bạn đã có thể chia sẽ video thực hành của mình rồi nhé!
+            strong Lưu ý! Bạn đã có thể chia sẽ video thực hành của mình rồi nhé!
 
           #fb-root
           script(async='' defer='' crossorigin='anonymous' src='https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v9.0&appId=365495230891132&autoLogAppEvents=1' nonce='XklYdq55')
-          .fb-comments(data-href='http://localhost:3000/howtoplay' data-width='' data-numposts='5')
+          .fb-comments(data-href='' data-width='' data-numposts='5' data-order-by='social')
+        .col-sm-2
   script(src="/javascripts/player.js")
     

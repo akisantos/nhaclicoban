@@ -1,5 +1,5 @@
 $(document).ready(()=>{ 
-    
+    $('#toTopBtn').fadeOut();
     //Khi load trang hoàn tất, kích sidebar
     $('#sidebarCollapse').on('click', function () {
         $('#sidebar').toggleClass('active');
@@ -15,6 +15,26 @@ $(document).ready(()=>{
 
     
 })
+
+
+// ScrollToTop
+
+$(".lesson").ready(function() {
+    $(".lesson").scroll(function() {
+        if ($(this).scrollTop() > 20) {
+        $('#toTopBtn').fadeIn();
+    } else {
+        $('#toTopBtn').fadeOut();
+    }
+});
+    
+$('#toTopBtn').click(function() {
+    $(".lesson").animate({
+        scrollTop: 0
+    }, 1000);
+        return false;
+    });
+});
 
 
 // Searchbox
@@ -75,9 +95,8 @@ $(document).ready(()=>{
         if (result !==undefined && result !== null){
 
             result.forEach((data) => {
-
                 let crrLocation = LocationLink + '/player/' + data.videoId;
-                $('.searchResult').append('<a href='+crrLocation+' ><div class="media"><img class="d-flex mr-3" src="'+data.thumbnail+'" style="width:15%"><div class="media-body"><h4 class="mt-0">'+data.title + data.author.name+'</h4><h5>Thời lượng: '+data.timestamp+'</h5><p>'+data.description+'</p></div></div></a><br>')
+                $('.searchResult').append('<a href='+crrLocation+' ><div class="media" ><img class="d-flex mr-3" src="'+data.thumbnail+'" style="width:15%"><div class="media-body"><h4 class="mt-0">'+data.title + data.author.name+'</h4><h5>Thời lượng: '+data.timestamp+'</h5><p>'+data.description+'</p></div></div></a><br>')
             });
         }
 

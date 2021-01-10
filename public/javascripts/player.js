@@ -12,17 +12,38 @@ var player;
 // Lấy Id
 $(document).ready(()=>{
   $('#id').hide();
+  $('#toTopBtn').fadeOut();
   document.title = 'Tự học chơi nhạc cụ'
 })
 let vidId = $('#id').text();
 
 function onYouTubePlayerAPIReady() {
     player = new YT.Player('ytplayer', {
-      height: '50%',
-      width: '60%',
+      height: '400px',
+      width: '90%',
       videoId: vidId,
     });
 }
 
 let crrLocation = window.location.href;
 $('.fb-comments').attr("data-href",crrLocation);
+
+// ScrollToTop
+
+$(".lesson").ready(function() {
+    $(".lesson").scroll(function() {
+        if ($(this).scrollTop() > 20) {
+        $('#toTopBtn').fadeIn();
+    } else {
+        $('#toTopBtn').fadeOut();
+    }
+});
+    
+$('#toTopBtn').click(function() {
+    $(".lesson").animate({
+        scrollTop: 0
+    }, 1000);
+        return false;
+    });
+});
+
