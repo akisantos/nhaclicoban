@@ -47,7 +47,7 @@ $('#seach-box').keyup(function () {
 
 $("#search-submit").click(()=>{
     var ele = document.getElementsByName('instrument'); 
-    let instrumentType = ['100 Top Song','piano tutorial','guitar tutorial','ukulele tutorial'];
+    let instrumentType = ['piano guitar ukulele','piano tutorial','guitar tutorial','ukulele tutorial'];
     let pos=0; 
     $("#ress").html('Chờ tí xíu nha 😅');
     for(i = 0; i < ele.length; i++) { 
@@ -88,7 +88,7 @@ $("#search-submit").click(()=>{
 // Tự động load khi xong trang
 $(document).ready(()=>{
     let LocationLink = window.location.href;
-    $.post(LocationLink+'/keywords',{"data":'top 100 piano guitar song'}, function(result){
+    $.post(LocationLink+'/keywords',{"data":'100 piano guitar top song to play'}, function(result){
         console.log(result)
         $("#ress").html('Yay! Bạn không biết chơi bài gì? Xem qua thử nhé! 😎');
         $('.searchResult').html('')
