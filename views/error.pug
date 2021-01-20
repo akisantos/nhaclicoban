@@ -1,6 +1,16 @@
 extends layout
 
 block content
-  h1= message
-  h2= error.status
-  pre #{error.stack}
+
+  .container
+    h1= message
+    h2#id= error.status
+    a(href="http://localhost:3000/") Về trang chủ
+
+    <img src="./images/404.svg" alt="Không tìm thấy trang" id="waybackhome" />
+
+
+    p Chi tiết lỗi (debug only)
+    pre #{error.stack}
+
+    

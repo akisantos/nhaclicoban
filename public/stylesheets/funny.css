@@ -272,6 +272,13 @@ a.article, a.article:hover {
     MEDIAQUERIES
 ----------------------------------------------------- */
 @media (max-width: 768px) {
+    .youtubeThumb{
+        width: 40%;
+    }
+    .youtubeRes{
+        width: 80vw;
+        height: 200px;
+    }
     #sidebar {
         margin-left: -250px;
         transform: rotateY(90deg);

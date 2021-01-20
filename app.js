@@ -9,6 +9,7 @@ var usersRouter = require('./routes/users');
 var inputRouter = require('./routes/input');
 var youtubeRoute = require('./routes/funny');
 var youtubePlayerRoute = require('./routes/youtubeplayer');
+var notePage = require('./routes/note');
 
 var app = express();
 
@@ -27,6 +28,7 @@ app.use('/users', usersRouter);
 app.use('/input', inputRouter);
 app.use('/funny', youtubeRoute);
 app.use('/howtoplay', youtubePlayerRoute);
+app.use('/note',notePage)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

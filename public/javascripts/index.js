@@ -20,7 +20,7 @@ $(".lesson").on('scroll', ()=> {
 
 
     }else{
-        $("#lesson-name").html('Tool học nhạc nho nhỏ của Akkii');
+        $("#lesson-name").html('Ｒｉｔｓｕ!!');
     }
 
 })

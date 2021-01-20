@@ -71,7 +71,7 @@ $("#search-submit").click(()=>{
                 result.forEach((data) => {
 
                     let crrLocation = LocationLink + '/player/' + data.videoId;
-                    $('.searchResult').append('<a href='+crrLocation+' ><div class="media"><img class="d-flex mr-3" src="'+data.thumbnail+'" style="width:15%"><div class="media-body"><h4 class="mt-0">'+data.title + data.author.name+'</h4><h5>Thời lượng: '+data.timestamp+'</h5><p>'+data.description+'</p></div></div></a><br>')
+                    $('.searchResult').append('<a href='+crrLocation+' ><div class="media"><img class="d-flex mr-3 youtubeThumb" src="'+data.thumbnail+'"><div class="media-body"><h4 class="mt-0">'+data.title + data.author.name+'</h4><h5>Thời lượng: '+data.timestamp+'</h5><p>'+data.description+'</p></div></div></a><br>')
                 });
             }
     
@@ -90,13 +90,13 @@ $(document).ready(()=>{
     let LocationLink = window.location.href;
     $.post(LocationLink+'/keywords',{"data":'100 piano guitar top song to play'}, function(result){
         console.log(result)
-        $("#ress").html('Yay! Bạn không biết chơi bài gì? Xem qua thử nhé! 😎');
+        $("#ress").html('Bạn không biết chơi bài gì? Xem qua thử nhé! 😎');
         $('.searchResult').html('')
         if (result !==undefined && result !== null){
 
             result.forEach((data) => {
                 let crrLocation = LocationLink + '/player/' + data.videoId;
-                $('.searchResult').append('<a href='+crrLocation+' ><div class="media" ><img class="d-flex mr-3" src="'+data.thumbnail+'" style="width:15%"><div class="media-body"><h4 class="mt-0">'+data.title + data.author.name+'</h4><h5>Thời lượng: '+data.timestamp+'</h5><p>'+data.description+'</p></div></div></a><br>')
+                $('.searchResult').append('<a href='+crrLocation+' ><div class="media youtubeRes"><img class="d-flex mr-3 youtubeThumb" src="'+data.thumbnail+'"><div class="media-body"><h4 class="mt-0">'+data.title + data.author.name+'</h4><h5>Thời lượng: '+data.timestamp+'</h5><p>'+data.description+'</p></div></div></a><br><br>')
             });
         }
 

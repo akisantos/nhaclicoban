@@ -35,6 +35,8 @@ block content
         li
           a.text-muted(href='/funny') Ritsu Zone
         li
+          a.text-muted(href='/note') Note của bạn
+        li
           a.text-muted(href='/lesson/aboutmelol') About
     // Holder
     div(class="lessonContent" id="content")
@@ -42,13 +44,13 @@ block content
       nav.navbar.navbar-expand-lg.navbar-light.bg-light
         a#toTopBtn.cd-top.text-replace.js-cd-top.cd-top--is-visible.cd-top--fade-out.pointer
         .container-fluid
-          //- button#sidebarCollapse.navbar-btn(type='button')
-          //-   span
-          //-   span
-          //-   span
+          button#sidebarCollapse.navbar-btn(type='button')
+            span
+            span
+            span
             
 
-          h5.badge.badge-primary  Ritsu!! Tự học và chia sẻ cách tự học của mình với mọi người nhé!
+          h5.badge.badge-primary  Ｒｉｔｓｕ!!
 
           button.btn.btn-dark.d-inline-block.d-lg-none.ml-auto(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
             i.fas.fa-align-justify
@@ -64,8 +66,20 @@ block content
           a#id=title
           #ytplayer
           br
+          br
+          p#videoTitle
+          br
+          .akiFeature
+            button.btn.btn-success(type='button' id='save-note') Note
+
+            button.btn.btn-info(type='button' onclick='search()') Quay lại tìm kiếm
+          br
+
+          p#status
+
           .alert.alert-success(role='alert')
-            strong Lưu ý! Bạn đã có thể chia sẽ video thực hành của mình rồi nhé!
+            strong Lưu ý! Phần comment được dùng cho mục đích giao lưu, học hỏi!
+              |  Mọi hình thức lăng mạ, sử dụng từ nhạy cảm đều bị cấm!
 
           #fb-root
           script(async='' defer='' crossorigin='anonymous' src='https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v9.0&appId=365495230891132&autoLogAppEvents=1' nonce='XklYdq55')

@@ -3,8 +3,7 @@ extends layout
 block content
   link(rel="stylesheet", href="/stylesheets/index.css")
   link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
-  script(src="/javascripts/jsonParser.js")
-  
+
   .wrapper
     
     // Sidebar
@@ -45,29 +44,24 @@ block content
             span
             span
             span
+          
           a(id="lesson-name") Ｒｉｔｓｕ!!
-          button.btn.btn-dark.d-inline-block.d-lg-none.ml-auto(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
-            i.fas.fa-align-justify
 
-          #navbarSupportedContent.collapse.navbar-collapse
-            ul.pagination.nav.navbar-nav.ml-auto
-              li.page-item
-                a.page-link(href='#' aria-label='Next' id="back-button")
-                  span(aria-hidden='true') «
-                  span.sr-only Trước
-
-              li.page-item
-                a.page-link(href='#' aria-label='Next' id="next-button")
-                  span(aria-hidden='true') »
-                  span.sr-only Sau
 
       .lesson
-        h2(id='lesson-name-header')
+
+        .container-fluid
+          br
+          button.btn.btn-danger(type='button' id='delete-all') Xóa tất cả
+          br
+          br
+          p Dưới đây là tất cả note bạn đã lưu
+          p#total Tổng
         #lessonContent
 
+    
 
 
 
 
-
-  script(src="/javascripts/index.js")
+  script(src="/javascripts/note.js")
