@@ -267,6 +267,14 @@ a.article, a.article:hover {
     margin: 5px auto;
 }
 
+.youtubeRes{
+    height: 200px;
+    max-height: 200px;
+    overflow: hidden;
+}
+
+
+
 
 /* ---------------------------------------------------
     MEDIAQUERIES

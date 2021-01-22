@@ -3,9 +3,9 @@ extends layout
 block content
 
   link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
-  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css')
-  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
-  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js')
+  //- link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css')
+  //- script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+  //- script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js')
   link(rel="stylesheet", href="/stylesheets/funny.css")
   
   .wrapper
@@ -55,8 +55,8 @@ block content
 
               input.form-control(type='text' placeholder='Tìm kiếm' aria-label='Tìm kiếm' max-length='30' id='seach-box' data-toggle="tooltip" data-placement="bottom" title="Chỉ cần nhập tên bài muốn học thôi")
 
-            button.btn.btn-outline-white.btn-md.my-0.ml-sm-2(id='search-submit') 
-              span.glyphicon.glyphicon-search
+            button.btn.btn-outline-white.btn-md.my-0.ml-sm-2#search-submit
+              i.fas.fa-search
             
           button.btn.btn-dark.d-inline-block.d-lg-none.ml-auto(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
             i.fas.fa-align-justify

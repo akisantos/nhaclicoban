@@ -13,13 +13,34 @@ html
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     script(src='https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js')
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    script(src="/javascripts/darkmode.js")
     script(src='https://www.google.com/recaptcha/api.js' async='' defer='')
     script.
       function onSubmit(token) {
       document.getElementById("demo-form").submit();
       grecaptcha.execute();
       }
+      function addDarkmodeWidget() {
+        const options = {
+          bottom: '26px', // default: '32px'
+          right: '90px', // default: '32px'
+          left: 'unset', // default: 'unset'
+          time: '0.5s', // default: '0.3s'
+          mixColor: '#fff', // default: '#fff'
+          backgroundColor: '#fff',  // default: '#fff'
+          buttonColorDark: '#100f2c',  // default: '#100f2c'
+          buttonColorLight: '#fff', // default: '#fff'
+          saveInCookies: true, // default: true,
+          label: '🌓', // default: ''
+          autoMatchOsTheme: true // default: true
+        }
+        new Darkmode(options).showWidget();
+      }
+      window.addEventListener('load', addDarkmodeWidget);
+
+
+
   body
     block content
 

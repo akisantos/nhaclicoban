@@ -96,7 +96,7 @@ $(document).ready(()=>{
 
             result.forEach((data) => {
                 let crrLocation = LocationLink + '/player/' + data.videoId;
-                $('.searchResult').append('<a href='+crrLocation+' ><div class="media youtubeRes"><img class="d-flex mr-3 youtubeThumb" src="'+data.thumbnail+'"><div class="media-body"><h4 class="mt-0">'+data.title + data.author.name+'</h4><h5>Thời lượng: '+data.timestamp+'</h5><p>'+data.description+'</p></div></div></a><br><br>')
+                $('.searchResult').append('<a href='+crrLocation+' ><div class="media youtubeRes"><img class="d-flex mr-3 youtubeThumb darkmode-ignore" src="'+data.thumbnail+'"><div class="media-body"><h5 class="mt-0">'+data.title + '</h5><h6 class="mt-0">'+ data.author.name+ '</h6><p>Thời lượng:'+data.timestamp+'</p><p>'+data.description+'</p></div></div></a><br><br>')
             });
         }
 

@@ -7,6 +7,8 @@ block content
   script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js')
   link(rel="stylesheet", href="/stylesheets/player.css")
 
+
+
   .wrapper
     
     // Sidebar
@@ -61,8 +63,8 @@ block content
             a(href="/funny") Trở lại tìm kiếm
 
       .lesson
-        .col-sm-2
-        .videoHolder.col-md-8.text-center
+        //- .col-sm-2
+        .videoHolder.col-md-9.text-center
           a#id=title
           #ytplayer
           br
@@ -84,6 +86,18 @@ block content
           #fb-root
           script(async='' defer='' crossorigin='anonymous' src='https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v9.0&appId=365495230891132&autoLogAppEvents=1' nonce='XklYdq55')
           .fb-comments(data-href='' data-width='' data-numposts='4' data-order-by="social")
-        .col-sm-2
+        .col-sm-3
+          br
+          p Tìm kiếm hợp âm (Nguồn: HAC)
+          .form-inline.ml-auto
+            .md-form.my-0
+
+              input.form-control(type='text' placeholder='Nhập tên bài' aria-label='Tìm kiếm hợp âm' max-length='30' id='seach-box' data-toggle="tooltip" data-placement="bottom" title="Nhập tên bài")
+
+            button.btn.btn-outline-white.btn-md.my-0.ml-sm-2(onclick='searchChord()') 
+              i.fas.fa-search
+          #hopam
+            h6#songName
+            #chord
   script(src="/javascripts/player.js")
     

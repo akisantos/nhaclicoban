@@ -1,6 +1,9 @@
 var express = require('express');
 var router = express.Router();
 const yts = require( 'yt-search' )
+const hac = require('hopamchuan');
+var chordprojs = require("chordprojs")
+const markdown = require('html-to-markdown')
 
 
 router.get('/', function(req, res, next) {
@@ -21,9 +24,32 @@ router.post('/keywords', function(req, res) {
 router.get('/player/:id', function(req, res, next) {
     let data = req.params.id;
 
-    res.render('youtubeplayer', { title: data });
+    res.render('youtubeplayer', { title: data});
 });
 
+router.post('/player/:id', function(req, res, next) {
+    let songChord;
+    let holder = req.body.title;
+
+    hac.autocomplete(holder,(song)=>{
+        songChord = JSON.parse(song)
+        if (songChord !== undefined){
+
+            let id = songChord.data[0].id;
+            hac.get(id,(list)=>{
+                console.log(list)
+                res.send(list[0].chordPro)
+            })
+        }else{
+            res.send('Lỗi!')
+        }
+
+    })
+
+
+
+
+});
 
 async function youtubeSearch(keywords){
     

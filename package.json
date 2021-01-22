@@ -7,10 +7,16 @@
   },
   "dependencies": {
     "@editorjs/editorjs": "^2.19.1",
+    "cheerio": "^1.0.0-rc.5",
+    "chordprojs": "^0.1.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
+    "hopamchuan": "git+https://github.com/1tuan1/hopamchuan.git",
+    "html-to-markdown": "^1.0.0",
+    "html-to-text": "^6.0.0",
     "http-errors": "~1.6.3",
+    "lodash": "^4.17.20",
     "morgan": "~1.9.1",
     "pug": "2.0.0-beta11",
     "yt-search": "^2.5.1"
